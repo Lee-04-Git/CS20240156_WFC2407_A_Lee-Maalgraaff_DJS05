@@ -22,3 +22,11 @@ const tallyReducer  = (state = tallyState, action) => {
             return state;
     }
 };
+
+// Initialize the Redux store for managing the tally app state
+const tallyStore = Redux.createStore(tallyReducer);
+
+// Subscribe to the store and log the updated state whenever it changes
+tallyStore.subscribe(() => {
+    console.log(tallyStore.getState());
+});
